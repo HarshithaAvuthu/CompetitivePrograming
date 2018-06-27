@@ -1,8 +1,5 @@
 def get_max_profit(stock_prices):
 
-    # Calculate the max profit
-    
-    
     minPrice = stock_prices[0]
     maxProfit = stock_prices[1] - stock_prices[0]
 
@@ -16,15 +13,6 @@ def get_max_profit(stock_prices):
         minPrice = min(minPrice, price)
 
     return maxProfit
-
-
-
-
-
-
-
-
-
 
 
 
