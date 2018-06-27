@@ -14,25 +14,25 @@ public class Solution {
             throw new IllegalArgumentException("exception");
         }
                
-        int l=intArray.length;
-        int res[]=new int[l];
+        int l = intArray.length;
+        int res[] = new int[l];
 
         int temp1=1;
 
         for(int i=0;i<l;i++)
         {
-            res[i]=temp1;
+            res[i] = temp1;
             
-            temp1=temp1*intArray[i];
+            temp1 = temp1 * intArray[i];
         }
 
         int temp2=1;
         
         for(int i=l-1;i>=0;i--)
         {
-            res[i]=res[i]*temp2;
+            res[i] = res[i] * temp2;
             
-            temp2=temp2*intArray[i];
+            temp2 = temp2 * intArray[i];
         }
         
         return res;
