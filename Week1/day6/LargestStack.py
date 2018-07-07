@@ -3,28 +3,27 @@ import unittest
 
 class Stack(object):
 
+    # initialize an empty list
     def __init__(self):
-        """Initialize an empty stack"""
         self.items = []
 
+    # push a new item to the last index
     def push(self, item):
-        """Push new item to stack"""
         self.items.append(item)
 
+    # remove the last item
     def pop(self):
-        """Remove and return last item"""
-        # If the stack is empty, return None
+
+        # if the stack is empty, return None
         # (it would also be reasonable to throw an exception)
-        if not self.items:
-            return None
+        if not self.items: return None
 
         return self.items.pop()
 
+    # see what the last item is
     def peek(self):
-        """See what the last item is"""
-        if not self.items:
-            return None
-        return self.items[-1]
+        if not self.items: return None
+        return self.items[len(self.items)-1]
 
 
 class MaxStack(object):
@@ -33,17 +32,22 @@ class MaxStack(object):
     
 
     def __init__(self):
-        pass
+        self.stack = Stack()
+        self.max_stack = Stack()
 
     def push(self, item):
-        pass
+        self.stack.push(item)
+        if item >= self.max_stack.peek():
+            self.max_stack.push(item)
 
     def pop(self):
-        pass
+        item = self.stack.pop()
+        if item == self.max_stack.peek():
+            self.max_stack.pop()
+        return item
 
     def get_max(self):
-        pass
-
+        return self.max_stack.peek()
 
 
 
