@@ -23,7 +23,7 @@ def anagram(s,t):
 
 
 # s='Dormitory'
-# t=''
+# t='Dirty Room'
 # print(anagram(s,t))
 print(anagram('anagram','nagaram'))
 print(anagram('rat','cat'))
