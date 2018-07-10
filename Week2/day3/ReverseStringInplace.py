@@ -2,11 +2,24 @@ import unittest
 
 
 def reverse(list_of_chars):
-
     # Reverse the input list of chars in place
-    
+    i = 0
+    j = len(list_of_chars)
 
-    pass
+    if j == 0:
+        return list_of_chars
+    j -= 1
+    while i < j:
+        temp = list_of_chars[i]
+        list_of_chars[i] = list_of_chars[j]
+        list_of_chars[j] = temp
+
+        i += 1
+        j -= 1
+
+
+
+    return list_of_chars
 
 
 
