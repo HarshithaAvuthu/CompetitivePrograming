@@ -1,16 +1,15 @@
 import unittest
 
 
-def find_repeat(numbers_list):
+def find_repeat(number_list):
 
-    # Find the number that appears twice
-    size=len(numbers_list)
-    for i in range (0, size):
-        for j in range (i + 1, size):
-            if numbers_list[i] == numbers_list[j]:
-                return(numbers_list[i])
+            
+    n = len(number_list)
 
-
+    g = int((n - 1) * (n / 2.0))
+    total = sum(number_list)
+    d = total - g
+    return d
 
 
 
