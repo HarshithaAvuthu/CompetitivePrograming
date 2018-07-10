@@ -4,9 +4,26 @@ import unittest
 def kth_to_last_node(k, head):
 
     # Return the kth to last node in the linked list
-    
+    if k == 0:
+        assert (), ""
 
-    return None
+    ptr_1 = head
+    ptr_2 = head
+
+    count = 0
+    if head is not None:
+        while count < k:
+            if (ptr_2 is None):
+                assert (), ""
+            ptr_2 = ptr_2.next
+            count += 1
+
+    while (ptr_2 is not None):
+        ptr_1 = ptr_1.next
+        ptr_2 = ptr_2.next
+
+    return ptr_1
+
 
 
 
