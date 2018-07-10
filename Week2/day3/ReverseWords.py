@@ -3,13 +3,39 @@ import unittest
 
 def reverse_words(message):
 
-    # Decode the message by reversing the words
-    
+    length_of_msg = len(message)
+    if length_of_msg == 0:
+        return message
 
-    pass
+    reverse(message, 0, length_of_msg)
+
+    temp = 0
+    for k in range(length_of_msg):
+        if message[k] == " ":
+            reverse(message, temp, k)
+            temp = k + 1
+    reverse(message, temp, length_of_msg)
+
+    return message
 
 
+def reverse(list_of_chars, initial, ending):
+    # Reverse the input list of chars in place
+    i = initial
+    j = ending
 
+    if j == 0:
+        return list_of_chars
+    j -= 1
+    while i < j:
+        temp = list_of_chars[i]
+        list_of_chars[i] = list_of_chars[j]
+        list_of_chars[j] = temp
+
+        i += 1
+        j -= 1
+
+    return list_of_chars
 
 
 
