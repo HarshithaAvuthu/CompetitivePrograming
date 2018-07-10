@@ -1,12 +1,27 @@
 import unittest
 
-
-def get_closing_paren(sentence, opening_paren_index):
+def get_closing_paren(sentence, index):
 
     # Find the position of the matching closing parenthesis
-    
+    i = index
+    end = len(sentence)
+    count = 0
+    while i < end:
+        ch = sentence[i]
+        if ch == "(":
+            count += 1
+        elif ch == ")":
+            count -= 1
+            if count == 0:
+                return i
+        i += 1
+    if count!=0:
+        raise Exception
 
-    return -1
+
+
+
+
 
 
 
