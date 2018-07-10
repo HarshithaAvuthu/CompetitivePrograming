@@ -1,12 +1,35 @@
 import unittest
 
+def isMatchingPair(character1,character2):
+       if (character1 == '(' and  character2 == ')'):
+         return True
+       elif (character1 == '{' and character2 == '}'):
+         return True
+       elif (character1 == '[' and character2 == ']'):
+         return True
+       else:
+         return False
 
-def is_valid(code):
 
-    # Determine if the input code is valid
-    
 
-    return False
+
+def is_valid(exp):
+       stack=[]
+       for i in range(len(exp)):
+           
+          if (exp[i] == '{' or exp[i] == '(' or exp[i] == '['):
+              stack.append(exp[i])
+          if (exp[i] == '}' or exp[i] == ')' or exp[i] == ']'):
+              if not stack:
+                   return False
+              elif (isMatchingPair(stack.pop(), exp[i]) ==False ):
+                  return False
+     
+       if not stack:
+           return True
+       else:
+           return False
+
 
 
 
