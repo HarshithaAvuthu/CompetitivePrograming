@@ -1,14 +1,14 @@
 def uniqueMorseRepresentations(words):
 
     morse_code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-    words_encoded = set()
+    words1 = set()
     for word in words:
         string = ""
         for char in word:
             string += morse_code[ord(char) - ord('a')]
-        words_encoded.add(string)
+        words1.add(string)
         
-    return len(words_encoded)
+    return len(words1)
                 
 
 
